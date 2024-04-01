@@ -2,6 +2,7 @@ import React, {Suspense} from 'react';
 import {Link, Route, Routes} from 'react-router-dom';
 import {Counter} from './components/Counter';
 import './styles/index.scss';
+import {classNames} from './helpers/classNames/classNames';
 import {AboutPageAsync} from './pages/AboutPage/AboutPage.async';
 import {MainPageAsync} from './pages/MainPage/MainPage.async';
 import {useTheme} from './theme/useTheme';
@@ -11,8 +12,9 @@ const App = () => {
   
   const {theme, toggleTheme} = useTheme();
   
+  const bool = true;
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app', {}, [theme])}>
       <button onClick={toggleTheme}>THEME</button>
       <Link to={'/'}>Main</Link>
       <Link to={'/about'}>About</Link>
