@@ -1,6 +1,5 @@
 type Mods = Record<string, boolean | string>
 
-const obj: Mods = {'hovered': 'true'};
 
 export function classNames(className: string,
                            mods: Mods,
